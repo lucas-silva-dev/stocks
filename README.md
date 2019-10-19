@@ -8,7 +8,7 @@
 * Fazer um clone desse repositório: 
  $ git clone https://github.com/lucas-silva-dev/stocks.git
 * Rodar os seguintes comandos:
-* $ cd application
+* $ cd stocks
 * $ npm i
 * $ npm run dev
 * Depois no Browser acessar a url: http://localhost:3001/

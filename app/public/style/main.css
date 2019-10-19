@@ -1,0 +1,45 @@
+header {
+  background: #005598;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.secao {
+  display: flex;
+  height: calc(100vh - 56px);
+  background-color: #E1F5FE;
+  align-items: center;
+  justify-content: center;
+}
+.conteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+label {
+  font-size: 35px;
+}
+
+.logo {
+  display: flex;
+  height: calc(18vh - 56px);
+  border-block-end-color: rgba(5, 138, 179, 0.486);
+  align-items: center;
+  justify-content: center;
+  fill: #007bff;
+}
+
+.img {
+  fill: #E3F2FD;
+}
+.negrito {
+  font-weight: bold;
+}
+.italico {
+  font-style: italic;
+}

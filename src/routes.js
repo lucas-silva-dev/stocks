@@ -1,27 +1,30 @@
 const axios = require('axios');
-var value1 = "";
-var value2 = "";
+const { Router } = require('express');
 
-module.exports = (app) => {
-  app.get('/', (req, res) => {
-    res.render('index.ejs');
-  });
+const routes = Router();
 
-  app.post('/', (req, res) => {
-    res.render('index.ejs');
-  });
+routes.get('/', (req, res) => {
+  return res.render('index.html');
+});
 
-  app.post('/main', (req, res) => {
-    let asst = req.body;
-    let simbolo = asst.quote;
+routes.post('/main', async (req, res) => {
+  const asset = req.body;
+  const symbol = asset.quote;
 
-    axios.all([
-      axios.get(`https://cloud.iexapis.com/stable/stock/${simbolo}/quote?token=pk_6d0042f4630a4e0895c9e06dd7222e1c`),
-      axios.get(`https://cloud.iexapis.com/stable/stock/${simbolo}/news/last/quote?token=pk_6d0042f4630a4e0895c9e06dd7222e1c`)
-    ]).then(axios.spread((stock, news) => {
-      value1 = stock.data
-      value2 = news.data
-    })).then(() => res.render('main.ejs', { value1, value2 }))
-       .catch(() => res.render('error.ejs'))
-  })
-};
+  try {
+    const [setStocks, setNews] = await axios.all([
+      axios.get(`https://cloud.iexapis.com/stable/stock/${symbol}/quote?token=pk_6d0042f4630a4e0895c9e06dd7222e1c`),
+      axios.get(`https://cloud.iexapis.com/stable/stock/${symbol}/news/last/quote?token=pk_6d0042f4630a4e0895c9e06dd7222e1c`)
+    ]);
+
+    const { data: stocks } = setStocks;
+    const { data: news } = setNews;
+
+    return res.render('main.html', { stocks, news });
+  } catch (error) {
+    return res.render('error.html');
+  };
+});
+
+
+module.exports = routes;

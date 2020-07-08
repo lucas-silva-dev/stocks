@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  <title>Error</title>
+{% endblock title %}
+
+{% set pageId = "error" %}
+
+{% block content %}
+
+  <header>
+    <nav class="">
+      <img src="assets/dol.png" class="logo">
+      <form class="" action="/" method="GET">
+        <!-- <input id="input" name="qoute" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
+        <button class="" type="submit">Retornar</button>
+      </form>
+    </nav>
+  </header>
+
+  <section class="">
+    <div class="conteudo">
+      <h1 class="negrito">Valor inválido</h1>
+      <h2 class="negrito">Digite um símbolo de ação válido</h2>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block scripts %}
+  {# <script src="/scripts/home.js"></script> #}
+{% endblock scripts %}

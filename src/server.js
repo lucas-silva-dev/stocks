@@ -1,0 +1,18 @@
+const express = require('express');
+const nunjucks = require('nunjucks');
+
+const routes = require('./routes');
+
+const app = express();
+
+nunjucks.configure('src/views', {
+  express: app,
+  noCache: true,
+});
+
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(routes);
+
+app.listen(3001);

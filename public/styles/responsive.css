@@ -1,0 +1,54 @@
+
+@media (max-width: 420px) {
+  header img {
+    margin-left: 10px;
+    max-height: 40px;
+  }
+
+  header form {
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  header form input {
+    text-align: center;
+    width: 100%;
+    max-width: 170px;
+    height: 30px;
+    margin-right: 10px;
+    padding: 0;
+  }
+
+  header form button.button {
+    width: 100%;
+    max-width: 40px;
+    height: 30px;
+    font-size: 0.01px;
+    padding: 6px 10px 6px;
+  }
+
+  header form button span {
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header form button span::after {
+    content: "";
+    background-image: url('../assets/search.svg');
+    width: 20px;
+    height: 20px;
+  }
+
+  section .container {
+    margin: 0 10px;
+  }
+
+  section .content h1 {
+    font-size: 28px;
+  }
+
+}

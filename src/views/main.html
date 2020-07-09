@@ -1,4 +1,4 @@
-{% extends 'layout.html' %}
+{% extends 'index.html' %}
 
 {% block styles %}{% endblock styles %}
 
@@ -13,21 +13,21 @@
 
   <section>
     <div class="container">
+      <h1>{{stocks.companyName}}</h1>
+
       <div class="content">
-        <label class="text-uppercase negrito">{{stock.companyName}}</label>
+        <strong >Stock Price:</strong>
+        <span>$
+          {{stocks.latestPrice}}
+        </span>
       </div>
       <div class="content">
-        <label class="negrito">Stock Price:</label>
-        <label class="italico">$</label>
-        <label class="italico">{{stocks.latestPrice}}</label>
+        <strong >Exchange:</strong>
+        <span>{{stocks.primaryExchange}}</span>
       </div>
       <div class="content">
-        <label class="negrito">Exchange:</label>
-        <label class="italico">{{stocks.primaryExchange}}</label>
-      </div>
-      <div class="content">
-        <label class="negrito">News:</label>
-        <label class="italico">{{news[0].headline}}</label>
+        <strong >News:</strong>
+        <span class="news">{{news[0].headline}}</span>
       </div>
     </div>
   </section>

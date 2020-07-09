@@ -1,12 +1,23 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="pt_br">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-{% set pageId = "home" %}
+    <link rel="shortcut icon" type="imagem/x-icon" href="assets/dolar.svg" fill="#007bff"/>
 
-{% block content %}
-  {% include 'partials/header.html' %}
+    <link rel="stylesheet" href="/styles/style.css"/>
+    {% block styles %}{% endblock styles %}
+    <link rel="stylesheet" href="/styles/responsive.css"/>
 
-{% endblock content %}
+    {% block title %}
+      <title>Find your stock</title>
+    {% endblock title %}
+  </head>
+  <body>
+    {% block content %}
+      {% include 'partials/header.html' %}
+    {% endblock content %}
 
-{% block scripts %}
-  {# <script src="/scripts/home.js"></script> #}
-{% endblock scripts %}
+  </body>
+</html>
